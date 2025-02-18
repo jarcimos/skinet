@@ -28,10 +28,10 @@ public class SpecificationEvaluator<T> where T : BaseEntity
             query = query.Distinct();
         }
 
-        // if (spec.IsPagingEnabled)
-        // {
-        //     query = query.Skip(spec.Skip).Take(spec.Take);
-        // }
+        if (spec.IsPagingEnabled)
+        {
+            query = query.Skip(spec.Skip).Take(spec.Take);
+        }
 
         // query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
         // query = spec.IncludeStrings.Aggregate(query, (current, include) => current.Include(include));
@@ -69,10 +69,10 @@ public class SpecificationEvaluator<T> where T : BaseEntity
             selectQuery = selectQuery?.Distinct();
         }
 
-        // if (spec.IsPagingEnabled)
-        // {
-        //     selectQuery = selectQuery?.Skip(spec.Skip).Take(spec.Take);
-        // }
+        if (spec.IsPagingEnabled)
+        {
+            selectQuery = selectQuery?.Skip(spec.Skip).Take(spec.Take);
+        }
 
         return selectQuery ?? query.Cast<TResult>();
     }
