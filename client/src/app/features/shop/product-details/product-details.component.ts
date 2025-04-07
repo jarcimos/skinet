@@ -55,19 +55,19 @@ export class ProductDetailsComponent  implements OnInit{
     if (this.quantity > this.quantityInCart) {
       const itemsToAdd = this.quantity - this.quantityInCart;
       this.quantityInCart += itemsToAdd;
-      // this.cartService.addItemToCart(this.product, itemsToAdd);
+      this.cartService.addItemToCart(this.product, itemsToAdd);
     } else {
       const itemsToRemove = this.quantityInCart - this.quantity;
       this.quantityInCart -= itemsToRemove;
-      // this.cartService.removeItemFromCart(this.product.id, itemsToRemove);
+      this.cartService.removeItemFromCart(this.product.id, itemsToRemove);
     }
   }
 
-  // updateQuantityInCart() {
-  //   this.quantityInCart = this.cartService.cart()?.items
-  //     .find(x => x.productId === this.product?.id)?.quantity || 0;
-  //   this.quantity = this.quantityInCart || 1;
-  // }
+  updateQuantityInCart() {
+    this.quantityInCart = this.cartService.cart()?.items
+      .find(x => x.productId === this.product?.id)?.quantity || 0;
+    this.quantity = this.quantityInCart || 1;
+  }
 
   getButtonText() {
     return this.quantityInCart > 0 ? 'Update cart' : 'Add to cart'
