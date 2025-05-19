@@ -8,7 +8,7 @@ import { ShopParams } from '../../shared/models/shopParams';
   providedIn: 'root'
 })
 export class ShopService {
-  baseUrl = 'http://localhost:5019/api/';
+  baseUrl = 'https://localhost:5001/api/';
   private http = inject(HttpClient);
   types: string[] = [];
   brands: string[] = [];
@@ -39,7 +39,7 @@ export class ShopService {
   }
 
   getProduct(id: number) {
-    return this.http.get<Product>(this.baseUrl + 'products/' + id) 
+    return this.http.get<Product>(this.baseUrl + 'products/' + id);
   }
 
   getBrands() {

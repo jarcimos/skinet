@@ -1,6 +1,6 @@
 @if (products) {
-    <div class="flex flex-col gap-3 sm:flex md:block">
-        <div class="flex justify-between">
+    <div class="flex flex-col gap-3">
+        <div class="flex justify-between sm:flex-col sm:gap-4">
             <mat-paginator
                 class="bg-white"
                 (page)="handlePageEvent($event)"
@@ -33,7 +33,7 @@
     
             </form>
     
-            <div class="flex gap-3">
+            <div class="flex gap-3 items-center sm:mx-4 ">
                 <button class="match-input-height" mat-stroked-button (click)="openFiltersDialog()">
                     <mat-icon>filter_list</mat-icon>
                     Filters

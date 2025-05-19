@@ -9,7 +9,7 @@ import { MatButton } from '@angular/material/button';
   styleUrl: './test-error.component.scss'
 })
 export class TestErrorComponent {
-  baseUrl = 'http://localhost:5019/api/';
+  baseUrl = 'https://localhost:5001/api/';
   private http = inject(HttpClient);
   validationErrors?: string[];
 

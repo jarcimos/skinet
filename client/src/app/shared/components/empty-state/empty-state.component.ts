@@ -9,8 +9,7 @@ import { BusyService } from '../../../core/services/busy.service';
   standalone: true,
   imports: [
     MatIcon,
-    MatButton,
-    RouterLink
+    MatButton
   ],
   templateUrl: './empty-state.component.html',
   styleUrl: './empty-state.component.scss'
